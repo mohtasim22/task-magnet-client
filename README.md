@@ -14,3 +14,4 @@
 8. User's Image and Name is shown on Navbar after logging into the site.
 9. Used Dark/Light theme toggler on home page.
 10. Implimented Stripe payment gateway.
+
