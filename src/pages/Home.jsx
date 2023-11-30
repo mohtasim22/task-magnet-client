@@ -2,9 +2,6 @@ import { ToastContainer } from "react-toastify";
 import Banner from "../shared/Banner";
 import 'react-toastify/dist/ReactToastify.css';
 import Tags from "../shared/Tags";
-import Posts from "../shared/HomePosts";
-import AddPost from "../shared/AddPost";
-import Comments from "../shared/Comments";
 import Announcements from "../shared/Announcements";
 import HomePosts from "../shared/HomePosts";
 
