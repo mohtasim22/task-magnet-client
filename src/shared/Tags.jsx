@@ -23,7 +23,7 @@ const Tags = () => {
             </div>          
             <div className="services-section font-rajdhani py-8">
             {tagsArray.map((tag)=>(
-                <Link key={tag} to={`/posts/${tag}`} ><button  className="btn btn-outline mr-2 lowercase">{tag}</button></Link>
+                <Link key={tag} to={`/posts/${tag}`} ><button  className="btn btn-outline mr-2 lowercase tagsx">{tag}</button></Link>
                 
             ))}    
             </div>

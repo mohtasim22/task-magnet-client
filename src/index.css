@@ -368,7 +368,9 @@ thead{
 .post-content {
     width: 85%;
 }
-
+.tagsx{
+    margin: 5px;
+}
 /* RESPONSIVE CSS */
 @media (max-width: 576px) {
     .post-author {
