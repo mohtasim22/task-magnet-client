@@ -39,9 +39,8 @@ const MyProfile = () => {
                             <thead className="text-xl">
                             <tr>
                                 <th>Post title</th>
+                                <th>tag</th>
                                 <th>Votes</th>
-                                <th>Comment</th>
-                                <th>Delete</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -49,9 +48,8 @@ const MyProfile = () => {
                             {filteredMyPosts.slice(0, 3).map((myPost)=>(
                                 <tr key={myPost._id}>
                                     <td>{myPost.title}</td>
+                                    <td>{myPost.tag}</td>
                                     <td>{myPost.upvote - myPost.downvote}</td>
-                                    <td><button className="btn">Comment</button></td>
-                                    <td><button className="btn">Delete</button></td>
                                 </tr>
                             ))}  
                             
