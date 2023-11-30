@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react';
+import  { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
-import Select from 'react-select';
 import { ToastContainer, toast } from 'react-toastify';
 import { Chart } from "react-google-charts";
 const AdminProfile = () => {
