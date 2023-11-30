@@ -95,45 +95,9 @@ const PostDetails = () => {
     const filteredComments = comments.filter((comment) => comment.title === filterTitle);
     console.log(post);
 
-    const handleSubAssignments = e =>{
-        e.preventDefault();
-        const form= new FormData(e.currentTarget);
-
-        const pdfLink=form.get('pdfLink');
-        const description=form.get('description');
-        const title=assignment.title;
-        const email=user.email;    
-        const status='pending';    
-        const marks=assignment.marks;    
-        const obtainedMarks='Unchecked';    
-        const feedback='Unchecked';    
-        const examinee=user.displayName;    
-        const newSubAssignment={title,examinee,pdfLink,email,description,status,marks,obtainedMarks,feedback};   
-        console.log(newSubAssignment);
-
-        //send data to the server 
-        fetch('https://brand-shop-server-brown-pi.vercel.app/submittedAssignments', {
-            method: 'POST',
-            headers:{
-                'content-type':'application/json'
-            },
-            credentials:'include',
-            withCredentials: true,
-            body: JSON.stringify(newSubAssignment)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if(data.insertedId){
-                    toast("Assignment Submitted");
-                }
-        })
-
-    }
-
     // console.log(assignment);
 
-    
+
     return (
         <div>
             <div className="services-section max-w-6xl mx-auto py-16 font-rajdhani text-center">
