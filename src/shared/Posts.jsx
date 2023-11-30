@@ -3,18 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const Posts = () => {
     const posts = useLoaderData();
-    // const [posts,setposts] = useState([]);
     const [comments,setcomments] = useState([]);
-    // useEffect(()=>{
-    //     fetch(`https://assignment-12-server-murex-sigma.vercel.app/posts`)
-    //     .then(res =>res.json()
-    //     )
-    //     .then((data) =>{
-    //         setposts(data);
-    //     }
-    //     )
-        
-    // },[])
     console.log(posts)
 
     useEffect(()=>{
@@ -30,7 +19,6 @@ const Posts = () => {
 
     function countComments(targetTitle) {
         const occurrences = comments.reduce((count, item) => {
-          // Assuming the 'title' property represents the title in each object
           if (item.title === targetTitle) {
             return count + 1;
           }
@@ -47,7 +35,6 @@ const Posts = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {posts.map((post)=>(
-                    
                     <Link key={post._id} to={`/postDetails/${post._id}`}>
                         <div  className="card card-compact ">
                         <div className="card-body flex-row">
