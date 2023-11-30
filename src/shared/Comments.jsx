@@ -1,9 +1,26 @@
 import { useLoaderData } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const Comments = () => {
     const comments = useLoaderData();
     console.log(comments)
-
+    const handleDeleteComment=(id)=>{
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/comments/${id}`, {
+            method: 'DELETE',
+            headers:{
+                'content-type':'application/json'
+            },
+            
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.deletedCount >0){
+                    toast("Comment Deleted");
+                    // window.location.href = '/assignments';
+                }
+            })
+    }
     return (
         <div>
             <div className="services-section max-w-6xl mx-auto py-16 font-rajdhani text-center">
@@ -49,7 +66,7 @@ const Comments = () => {
                                     </div>
                                 </td>
                                 <td><button className="btn">Feedback</button></td>
-                                <td><button className="btn">Delete</button></td>
+                                <td><button onClick={()=>handleDeleteComment(comment._id)} className="btn">Delete</button></td>
                             </tr>
                         ))}
                             
@@ -59,6 +76,18 @@ const Comments = () => {
                 </div>
                  
             </div>
+            <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            />
         </div>
     );
 };
