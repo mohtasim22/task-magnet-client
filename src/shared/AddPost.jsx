@@ -31,6 +31,7 @@ const AddPost = () => {
         )
         
     },[])
+    console.log(users)
     const filteredUser = myPosts.filter(itemy => itemy?.email === filterEmail);
     const badge=filteredUser?.badge;
     const handleAddPost = e =>{
