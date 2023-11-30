@@ -1,28 +1,14 @@
 import { Link, NavLink, Outlet, useLoaderData } from "react-router-dom";
 import logo from "../../src/assets/logo.png"
-import { useContext, useEffect, useState } from "react";
+import { useContext} from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const Dashboard = () => {
-    // const [userx,setUserx] = useState([]);
     const userx= useLoaderData();
     console.log("user",userx);
     const {user}= useContext(AuthContext);
     const filterEmail = user.email;
     
-    // useEffect(()=>{
-    //     fetch(`https://assignment-12-server-murex-sigma.vercel.app/userss`)
-    //     .then(res =>res.json()
-    //     )
-    //     .then((data) =>{
-    //         console.log("data",data);
-    //         setUserx(data);
-    //     }
-    //     )
-        
-    // },[])
-
-    // const filteredMyUser = userx.filter((user) => user?.email === filterEmail);
     const filteredMyUser = userx.filter((usery) => usery?.email === filterEmail);
     const isAdmin = filteredMyUser.length > 0 && filteredMyUser[0].isAdmin === 'true';
 
