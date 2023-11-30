@@ -79,7 +79,6 @@ const PostDetails = () => {
                 }
         })
         }
-        // You can add an else block if you want to handle subsequent clicks differently
     };
     useEffect(()=>{
         fetch(`https://assignment-12-server-murex-sigma.vercel.app/comments`)
