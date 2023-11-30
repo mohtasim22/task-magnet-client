@@ -22,7 +22,7 @@ const AddPost = () => {
     console.log(postcount)
     const [users,setusers] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/users`)
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/users`)
         .then(res =>res.json()
         )
         .then((data) =>{
@@ -50,7 +50,7 @@ const AddPost = () => {
         console.log(newPost);
 
         //send data to the server 
-        fetch('http://localhost:5000/posts', {
+        fetch('https://assignment-12-server-murex-sigma.vercel.app/posts', {
             method: 'POST',
             headers:{
                 'content-type':'application/json'
@@ -70,7 +70,7 @@ const AddPost = () => {
     
     const [options, setOptions] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/tags`)
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/tags`)
         .then(res =>res.json()
         )
         .then((data) =>{

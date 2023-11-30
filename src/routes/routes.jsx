@@ -39,22 +39,22 @@ const router = createBrowserRouter([
         {
             path: "/postDetails/:id",
             element: <PostDetails></PostDetails>,
-            loader: ({params}) => fetch(`http://localhost:5000/posts/${params.id}`)
+            loader: ({params}) => fetch(`https://assignment-12-server-murex-sigma.vercel.app/posts/${params.id}`)
         },
         {
             path: "/posts/:tag",
             element: <Posts></Posts>,
-            loader: ({params}) => fetch(`http://localhost:5000/postss/${params.tag}`)
+            loader: ({params}) => fetch(`https://assignment-12-server-murex-sigma.vercel.app/postss/${params.tag}`)
         },
         {
             path: "/myPosts",
             element: <MyPosts></MyPosts>,
-            loader: () => fetch('http://localhost:5000/posts'),
+            loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/posts'),
         },
         {
             path: "/comments/:title",
             element:<Comments></Comments>,
-            loader: ({params}) => fetch(`http://localhost:5000/comments/${params.title}`)
+            loader: ({params}) => fetch(`https://assignment-12-server-murex-sigma.vercel.app/comments/${params.title}`)
         },
         {
             path: "/announcements",
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
         {
             path: "/postComments/:id",
             element: <PrivateRoutes><PostComments></PostComments></PrivateRoutes> ,
-            loader: ({params}) => fetch(`http://localhost:5000/posts/${params.id}`)
+            loader: ({params}) => fetch(`https://assignment-12-server-murex-sigma.vercel.app/posts/${params.id}`)
         },
         {
             path: "/login",
@@ -83,32 +83,32 @@ const router = createBrowserRouter([
     {
         path: 'dashboard',
         element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/users'),
+        loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/users'),
         children: [
             {
                 path:'myprofile',
                 element:<PrivateRoutes><MyProfile></MyProfile></PrivateRoutes> ,
-                loader: () => fetch('http://localhost:5000/users'),
+                loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/users'),
             },
             {
                 path:'addPost',
                 element: <PrivateRoutes><AddPost></AddPost></PrivateRoutes>,
-                loader: () => fetch('http://localhost:5000/posts'),
+                loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/posts'),
             },
             {
                 path:'myPost',
                 element: <PrivateRoutes><MyPosts></MyPosts></PrivateRoutes>,
-                loader: () => fetch('http://localhost:5000/posts'),
+                loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/posts'),
             },
             {
                 path:'manageUsers',
                 element: <PrivateRoutes><ManageUsers></ManageUsers></PrivateRoutes>,
-                loader: () => fetch('http://localhost:5000/users'),
+                loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/users'),
             },
             {
                 path:'adminProfile',
                 element: <PrivateRoutes><AdminProfile></AdminProfile></PrivateRoutes>,
-                loader: () => fetch('http://localhost:5000/users'),
+                loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/users'),
             },
             {
                 path:'makeAnnouncement',

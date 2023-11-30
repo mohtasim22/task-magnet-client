@@ -22,7 +22,7 @@ const MyPosts = () => {
 
     }
     const handleDeletePost=(id)=>{
-        fetch(`http://localhost:5000/posts/${id}`, {
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/posts/${id}`, {
             method: 'DELETE',
             headers:{
                 'content-type':'application/json'

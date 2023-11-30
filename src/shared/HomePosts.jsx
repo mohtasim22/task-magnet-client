@@ -5,7 +5,7 @@ const HomePosts = () => {
     const [posts,setposts] = useState([]);
     const [comments,setcomments] = useState([]);
     // useEffect(()=>{
-    //     fetch(`http://localhost:5000/posts`)
+    //     fetch(`https://assignment-12-server-murex-sigma.vercel.app/posts`)
     //     .then(res =>res.json()
     //     )
     //     .then((data) =>{
@@ -17,7 +17,7 @@ const HomePosts = () => {
     // console.log(posts)
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/comments`)
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/comments`)
         .then(res =>res.json()
         )
         .then((data) =>{
@@ -29,7 +29,7 @@ const HomePosts = () => {
 
     const handlePopularitySort=()=>{
         
-            fetch(`http://localhost:5000/postss?page=${currentPage}&size=${itemsPerPage}&sortbypop=yes`)
+            fetch(`https://assignment-12-server-murex-sigma.vercel.app/postss?page=${currentPage}&size=${itemsPerPage}&sortbypop=yes`)
             .then(res =>res.json()
             )
             .then((data) =>{
@@ -69,7 +69,7 @@ const HomePosts = () => {
     
     const pages =[...Array(numberOfPages).keys()];
     useEffect(()=>{
-        fetch(`http://localhost:5000/postss?page=${currentPage}&size=${itemsPerPage}&sortbypop=no`)
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/postss?page=${currentPage}&size=${itemsPerPage}&sortbypop=no`)
         .then(res =>res.json()
         )
         .then((data) =>{

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Tags = () => {
     const [options, setOptions] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/tags`)
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/tags`)
         .then(res =>res.json()
         )
         .then((data) =>{

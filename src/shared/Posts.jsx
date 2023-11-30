@@ -6,7 +6,7 @@ const Posts = () => {
     // const [posts,setposts] = useState([]);
     const [comments,setcomments] = useState([]);
     // useEffect(()=>{
-    //     fetch(`http://localhost:5000/posts`)
+    //     fetch(`https://assignment-12-server-murex-sigma.vercel.app/posts`)
     //     .then(res =>res.json()
     //     )
     //     .then((data) =>{
@@ -18,7 +18,7 @@ const Posts = () => {
     console.log(posts)
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/comments`)
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/comments`)
         .then(res =>res.json()
         )
         .then((data) =>{

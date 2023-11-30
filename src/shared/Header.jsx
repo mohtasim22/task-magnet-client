@@ -56,7 +56,7 @@ const Header = () => {
     const filterEmail = user?.email;
     const [users,setusers] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/users`)
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/users`)
         .then(res =>res.json()
         )
         .then((data) =>{
@@ -77,7 +77,7 @@ const Header = () => {
     }
     const [announcements,setAnnouncements] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/announcements`)
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/announcements`)
         .then(res =>res.json()
         )
         .then((data) =>{

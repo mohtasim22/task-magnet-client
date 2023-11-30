@@ -33,14 +33,14 @@ const LogIn = () => {
                 isAdmin: 'false'
 
             }
-            fetch('http://localhost:5000/users', {
+            fetch('https://assignment-12-server-murex-sigma.vercel.app/users', {
             method: 'POST',
             headers:{
                 'content-type':'application/json'
             },
             body: JSON.stringify(useInfo)
             })
-            axios.post('http://localhost:5000/jwt',result.user, {withCredentials:true})
+            axios.post('https://assignment-12-server-murex-sigma.vercel.app/jwt',result.user, {withCredentials:true})
             .then(res =>{
                 console.log(res.data)
                 if(res.data.success){
@@ -73,7 +73,7 @@ const LogIn = () => {
                 // const loggedInUser =result.user;
                 const user ={email}
                 // navigate(location?.state ? location.state : '/');
-                axios.post('http://localhost:5000/jwt',result.user, {withCredentials:true})
+                axios.post('https://assignment-12-server-murex-sigma.vercel.app/jwt',result.user, {withCredentials:true})
                 .then(res =>{
                     console.log(res.data)
                     if(res.data.success){

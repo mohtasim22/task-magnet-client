@@ -25,7 +25,7 @@ const Checkoutform = () => {
     
     useEffect(() => {
       // Create PaymentIntent as soon as the page loads
-      fetch("http://localhost:5000/create-payment-intent", {
+      fetch("https://assignment-12-server-murex-sigma.vercel.app/create-payment-intent", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ price: price }),
@@ -33,7 +33,7 @@ const Checkoutform = () => {
         .then((res) => res.json())
         .then((data) => setClientSecret(data.clientSecret));
 
-      fetch(`http://localhost:5000/users`)
+      fetch(`https://assignment-12-server-murex-sigma.vercel.app/users`)
       .then(res =>res.json()
       )
       .then((data) =>{
@@ -104,7 +104,7 @@ const Checkoutform = () => {
               console.log('transaction id',paymentIntent.id)
               setTransactionId(paymentIntent.id)
 
-            fetch(`http://localhost:5000/users/${filteredUserx[0]?._id}`, {
+            fetch(`https://assignment-12-server-murex-sigma.vercel.app/users/${filteredUserx[0]?._id}`, {
             method: 'PUT',
             headers:{
                 'content-type':'application/json'

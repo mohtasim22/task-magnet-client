@@ -5,7 +5,7 @@ const ManageUsers = () => {
     const users = useLoaderData();
 
     const handMakeAdmin=(id)=>{
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/users/${id}`, {
             method: 'PUT',
             headers:{
                 'content-type':'application/json'
@@ -23,7 +23,7 @@ const ManageUsers = () => {
             })
     }
     const handRemoveAdmin=(id)=>{
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/users/${id}`, {
             method: 'PUT',
             headers:{
                 'content-type':'application/json'

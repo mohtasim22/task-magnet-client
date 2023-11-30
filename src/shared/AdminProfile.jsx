@@ -11,7 +11,7 @@ const AdminProfile = () => {
     const filterEmail = user.email;
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/posts`)
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/posts`)
         .then(res =>res.json()
         )
         .then((data) =>{
@@ -37,7 +37,7 @@ const AdminProfile = () => {
         console.log(newtag);
 
         //send data to the server 
-        fetch('http://localhost:5000/tags', {
+        fetch('https://assignment-12-server-murex-sigma.vercel.app/tags', {
             method: 'POST',
             headers:{
                 'content-type':'application/json'
@@ -57,7 +57,7 @@ const AdminProfile = () => {
     }
     const [comments,setcomments] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/comments`)
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/comments`)
         .then(res =>res.json()
         )
         .then((data) =>{
@@ -68,7 +68,7 @@ const AdminProfile = () => {
     },[])
     const [users,setusers] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/users`)
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/users`)
         .then(res =>res.json()
         )
         .then((data) =>{

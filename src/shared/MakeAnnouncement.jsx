@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const MakeAnnouncement = () => {
     const [announcements,setAnnouncements] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/announcements`)
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/announcements`)
         .then(res =>res.json()
         )
         .then((data) =>{
@@ -14,7 +14,7 @@ const MakeAnnouncement = () => {
         
     },[])
     const handleDeleteAssn=(id)=>{
-        fetch(`http://localhost:5000/announcements/${id}`, {
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/announcements/${id}`, {
             method: 'DELETE',
             headers:{
                 'content-type':'application/json'
@@ -42,7 +42,7 @@ const MakeAnnouncement = () => {
         console.log(newPost);
 
         //send data to the server 
-        fetch('http://localhost:5000/announcements', {
+        fetch('https://assignment-12-server-murex-sigma.vercel.app/announcements', {
             method: 'POST',
             headers:{
                 'content-type':'application/json'

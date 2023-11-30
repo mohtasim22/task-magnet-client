@@ -57,7 +57,7 @@ const Register = () => {
                 photoURL: photourl,
             });
             
-            fetch('http://localhost:5000/users', {
+            fetch('https://assignment-12-server-murex-sigma.vercel.app/users', {
             method: 'POST',
             headers:{
                 'content-type':'application/json'

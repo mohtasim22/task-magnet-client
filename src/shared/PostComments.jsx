@@ -7,7 +7,7 @@ const PostComments = () => {
     const post = useLoaderData();
     const [comments,setcomments] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/comments`)
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/comments`)
         .then(res =>res.json()
         )
         .then((data) =>{
@@ -26,7 +26,7 @@ const PostComments = () => {
     const filterEmail = user?.email;
     const [users,setusers] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/users`)
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/users`)
         .then(res =>res.json()
         )
         .then((data) =>{
@@ -52,7 +52,7 @@ const PostComments = () => {
         console.log(newPost);
 
         //send data to the server 
-        fetch('http://localhost:5000/comments', {
+        fetch('https://assignment-12-server-murex-sigma.vercel.app/comments', {
             method: 'POST',
             headers:{
                 'content-type':'application/json'

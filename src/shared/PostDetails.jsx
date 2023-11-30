@@ -34,7 +34,7 @@ const PostDetails = () => {
         const downvote=countDown;
 
         const newPost={upvote,downvote}
-        fetch(`http://localhost:5000/posts/${post._id}`, {
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/posts/${post._id}`, {
             method: 'PUT',
             headers:{
                 'content-type':'application/json'
@@ -63,7 +63,7 @@ const PostDetails = () => {
         const downvote=countDown+1;
 
         const newPost={upvote,downvote}
-        fetch(`http://localhost:5000/posts/${post._id}`, {
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/posts/${post._id}`, {
             method: 'PUT',
             headers:{
                 'content-type':'application/json'
@@ -82,7 +82,7 @@ const PostDetails = () => {
         // You can add an else block if you want to handle subsequent clicks differently
     };
     useEffect(()=>{
-        fetch(`http://localhost:5000/comments`)
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/comments`)
         .then(res =>res.json()
         )
         .then((data) =>{

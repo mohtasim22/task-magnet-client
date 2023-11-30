@@ -9,7 +9,7 @@ const MyProfile = () => {
     const filterEmail = user.email;
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/posts`)
+        fetch(`https://assignment-12-server-murex-sigma.vercel.app/posts`)
         .then(res =>res.json()
         )
         .then((data) =>{

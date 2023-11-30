@@ -11,7 +11,7 @@ const Dashboard = () => {
     const filterEmail = user.email;
     
     // useEffect(()=>{
-    //     fetch(`http://localhost:5000/userss`)
+    //     fetch(`https://assignment-12-server-murex-sigma.vercel.app/userss`)
     //     .then(res =>res.json()
     //     )
     //     .then((data) =>{
