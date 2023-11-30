@@ -13,14 +13,7 @@ const MyPosts = () => {
     const filteredMyPosts = myPosts.filter((myPost) => myPost.email === filterEmail);
     console.log(filteredMyPosts);
 
-    const handleMyPosts = _id =>{
-        const filterId = _id;
-        const filteredSubAssn = subPosts.filter((subPost) => subPost._id === filterId);
-        setSubAssn(filteredSubAssn);
-        console.log(filteredSubAssn);
-        console.log(subAssn);
-
-    }
+    
     const handleDeletePost=(id)=>{
         fetch(`https://assignment-12-server-murex-sigma.vercel.app/posts/${id}`, {
             method: 'DELETE',

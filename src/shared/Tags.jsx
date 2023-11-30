@@ -18,7 +18,7 @@ const Tags = () => {
     const tagsArray = options.map(post => post.value);
     return (
         <div className="tags-section">
-            <div className='title font-rajdhani text-3xl md:text-5xl font-extrabold text-center pt-12 pb-6'>
+            <div className='title font-rajdhani text-3xl md:text-5xl font-extrabold text-center pt-10 pb-6'>
                 <h1>Tags</h1>
             </div>          
             <div className="services-section font-rajdhani py-8">
