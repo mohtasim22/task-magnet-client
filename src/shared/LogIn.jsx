@@ -71,7 +71,7 @@ const LogIn = () => {
                 setSuccess('Logged in Sucessfully');
                 toast("Logged in Sucessfully");
                 // const loggedInUser =result.user;
-                const user ={email}
+                // const user ={email}
                 // navigate(location?.state ? location.state : '/');
                 axios.post('https://assignment-12-server-murex-sigma.vercel.app/jwt',result.user, {withCredentials:true})
                 .then(res =>{
@@ -89,7 +89,7 @@ const LogIn = () => {
             
     }
     
-    
+
     return (
         <div className="relative flex flex-col mx-5 justify-center mt-20 mb-20 overflow-hidden">
             <div className="w-full p-6 m-auto bg-white rounded-md border-2 border-red-500 lg:max-w-xl font-rajdhani">

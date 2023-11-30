@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { ToastContainer,toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,6 +15,7 @@ import {
     WhatsappShareButton,
     WhatsappIcon
 } from "react-share";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const PostDetails = () => {
     const post = useLoaderData();
@@ -22,6 +23,8 @@ const PostDetails = () => {
     const [clicked, setClicked] = useState(false);
     const [countUp, setCountUp] = useState(parseInt(post.upvote));
     const [countDown, setCountDown] = useState(parseInt(post.downvote));
+    const {user}=useContext(AuthContext);
+    console.log(user)
 
     const handleUpClick = () => {
         if (!clicked) {
@@ -118,12 +121,33 @@ const PostDetails = () => {
                                 </div>
                                 <p className="card-txt text-md font-bold">{post.date}</p>
                                 <p className="card-txt text-lg mt-2">{post.description}</p>
-                                <div className="post-buttons text-left">
-                                    <button onClick={handleUpClick} disabled={clicked} className="btn btn-outline mr-2">UpVote: {countUp} </button>
-                                    <button onClick={handleDownClick} disabled={clicked} className="btn btn-outline mr-2">DownVote: {countDown}</button>
+                                <div className="post-buttons text-left flex">
+                                    {user==null?
+                                        <div><Link to={`/login`}><button className="btn btn-outline mr-2">UpVote: {countUp}</button></Link>
+                                        <Link to={`/login`}><button className="btn btn-outline mr-2">DownVote: {countDown}</button></Link>
+                                        </div>
+                                        
+                                        :
+                                        <div>
+                                            <button onClick={handleUpClick} disabled={clicked} className="btn btn-outline mr-2">UpVote: {countUp}</button>
+                                            <button onClick={handleDownClick} disabled={clicked} className="btn btn-outline mr-2">DownVote: {countDown}</button>
+                                        </div>
+                                        
+                                    }
                                     <Link to={`/postComments/${post._id}`}><button className="btn btn-outline mr-2">Commment</button></Link>
+                                    {user==null?
+                                        <div><Link to={`/login`}><button className="btn">Share</button></Link>
+                                        </div>
+                                        
+                                        :
+                                        <div>
+                                            <button className="btn" onClick={()=>document.getElementById('my_modal_1').showModal()}>Share</button>
+                                        </div>
+                                        
+                                    }
                                     
-                                    <button className="btn" onClick={()=>document.getElementById('my_modal_1').showModal()}>Share</button>
+                                    
+                                    
                                     <dialog id="my_modal_1" className="modal">
                                     <div className="modal-box text-black">
                                         <div className="flex">
