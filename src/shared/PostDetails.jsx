@@ -90,6 +90,7 @@ const PostDetails = () => {
         )
         
     },[])
+    
     const filterTitle = post.title;
     const filteredComments = comments.filter((comment) => comment.title === filterTitle);
     console.log(post);
