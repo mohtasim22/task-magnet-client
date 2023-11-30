@@ -89,6 +89,7 @@ const LogIn = () => {
             
     }
     
+    
     return (
         <div className="relative flex flex-col mx-5 justify-center mt-20 mb-20 overflow-hidden">
             <div className="w-full p-6 m-auto bg-white rounded-md border-2 border-red-500 lg:max-w-xl font-rajdhani">
