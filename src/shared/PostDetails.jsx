@@ -90,7 +90,7 @@ const PostDetails = () => {
         )
         
     },[])
-    
+
     const filterTitle = post.title;
     const filteredComments = comments.filter((comment) => comment.title === filterTitle);
     console.log(post);
@@ -133,6 +133,7 @@ const PostDetails = () => {
 
     // console.log(assignment);
 
+    
     return (
         <div>
             <div className="services-section max-w-6xl mx-auto py-16 font-rajdhani text-center">
