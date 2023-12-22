@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import logo from "../../src/assets/logo.png"
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useState } from "react";
@@ -49,7 +48,7 @@ const Header = () => {
 
     },[theme]);
 
-    const {user, logOut}=useContext(AuthContext);
+    const {user, logOut}= useContext(AuthContext);
     console.log(user);
     console.log(document.getElementsByClassName("diff-bg"));
     
@@ -75,18 +74,7 @@ const Header = () => {
         )
         .catch()
     }
-    const [announcements,setAnnouncements] = useState([]);
-    useEffect(()=>{
-        fetch(`https://assignment-12-server-murex-sigma.vercel.app/announcements`)
-        .then(res =>res.json()
-        )
-        .then((data) =>{
-            setAnnouncements(data);
-        }
-        )
-        
-    },[])
-    console.log(announcements.length)
+   
 
     return (
         <div className="header-section">
@@ -94,24 +82,16 @@ const Header = () => {
             <div className="font-rajdhani py-4">
             <div className="navbar">
             <div className="navbar-start">
-                <Link to={"/"}><a className="normal-case text-xl"><img className="logo" src={logo} alt="" /></a></Link>
+                <Link to={"/"}><a className="normal-case text-xl"><img className="logo" src="https://i.ibb.co/XXHrmhr/Screenshot-2023-12-20-213108.png" alt="" /></a></Link>
                 
             </div>
             <div className="navbar-center">
-            <   ul className="menu menu-horizontal px-1 text-base font-caveat font-bold">
+                <ul className="menu menu-horizontal px-1 text-base font-caveat font-bold">
                     <Link to={"/"}><li><a>Home</a></li></Link>
-                    <Link to={"/membership"}><li><a>Membership</a></li></Link>
-                    {
-                    announcements.length==0?
-                        <div></div>
-                        :
-                        
-                        <div className="menu menu-horizontal px-1 text-base font-caveat font-bold p-0">
-                            <Link to="/announcements"><button className="btn">{announcements.length}</button></Link>
-                            
-                        </div>
-                        
-                    }
+                    <Link to={"/dashboard/myprofile"}><li><a>Create Tasks</a></li></Link>
+                    <Link to={"/aboutus"}><li><a>About Us</a></li></Link>
+                    <Link to={"/contact"}><li><a>Contact</a></li></Link>
+                    
                 </ul>
             </div>
             <div className="navbar-end ml-2">
@@ -130,14 +110,7 @@ const Header = () => {
                     </label>
                 </div>
                 
-                {
-                    user?
-                        <div className="user-info flex justify-center items-center">
-                        </div>
-                        :
-                        <div></div>
-                        
-                }
+                
                 {
                     user?
                         <div className="p-0">
@@ -151,7 +124,7 @@ const Header = () => {
                                 </summary>
                                 <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                                     <li><a >{filteredUser[0]?.name}</a></li>
-                                    <li><a href="/dashboard/myprofile">Dashboard</a></li>
+                                    <li><a href="/dashboard/myprofile">Task Management</a></li>
                                     <li>
                                         <button onClick={handleSignOut} className="btn btn-header btn-ghost text-lg">
                                         Log Out
@@ -162,7 +135,7 @@ const Header = () => {
                         </div>
                         
                         :
-                        <Link to={"/login"}><button className="btn btn-ghost text-lg">Join Us</button></Link>
+                        <Link to={"/login"}><button className="btn btn-ghost text-lg">Log In</button></Link>
                 }
                 
                 

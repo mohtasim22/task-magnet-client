@@ -44,13 +44,7 @@ const LogIn = () => {
             .then(res =>{
                 console.log(res.data)
                 if(res.data.success){
-                    navigate(location?.state ? location.state : '/');
-                }
-            })
-            .then(res =>{
-                console.log(res.data)
-                if(res.data.success){
-                    navigate(location?.state ? location.state : '/');
+                    navigate(location?.state ? location.state : '/dashboard/myprofile');
                 }
             })
         })

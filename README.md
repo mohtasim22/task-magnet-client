@@ -1,17 +1,14 @@
-# Forum Focus
-### - used react, react-router, mongoDB, google-firebase-authentication 
-# Live Site Link: https://forumfocus-4db9e.web.app
-
+# Task-Magnet
+### - used react, react-router, mongoDB, google-firebase-authentication, node.js, express.js 
+# Live Site Link: https://taskmagnet-64d54.web.app
 
 ## Project Features
 1. User can log in and register to the site using Firebase Auth.
-2. Used private routes on create forum post, My posts, Dashboard Section. User has to be logged in to see those page.
-3. Once logged in SILVER user can post uptp 5 posts and user have to pay $5 to get the GOLD badge and post more than 5.
-4. Once logged in User can comment and make post.
-5. In post details tab user can see comments made by users.
-6. In My Posts tab user can see all submitted posts.
-7. User can see Error toasts if The password is less than 6 characters, don't have a capital letter, don't have a special character. Also added validation on URL, Email, Number Fields.
-8. User's Image and Name is shown on Navbar after logging into the site.
-9. Used Dark/Light theme toggler on home page.
-10. Implimented Stripe payment gateway.
+2. The user will be able to create new tasks, see previous tasks, and handle them through drag-and-drop functionality across the to-do list, ongoing list, and completed list.
+3. Users will be able to create new tasks with titles, descriptions, deadlines, and priority. (Low, moderate, high, etc.)
+4. As soon as a task is added, it will be shown on the to-do list of the task management dashboard.
+5. There will be three separate lists of to-do, ongoing, and completed. You have to Implement the drag-and-drop functionality so that the user can drag a task from ‘to-do’ to ‘ongoing’ or from ‘ongoing’ to ‘completed’. Or from any option to another option.
+6. Used the react hook form to create the tasks. 
+7. Users can delete any tasks from the task management dashboard. However, the user must first log in to explore the task management dashboard.
+
 

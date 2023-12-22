@@ -5,19 +5,10 @@ import LogIn from "../shared/LogIn";
 import Register from "../shared/Register";
 import NotFoundPage from "../shared/NotFoundPage";
 import PrivateRoutes from "./PrivateRoutes";
-import AddPost from "../shared/AddPost";
-import PostDetails from "../shared/PostDetails";
-import MyPosts from "../shared/MyPosts";
-import Comments from "../shared/Comments";
-import PostComments from "../shared/PostComments";
-import Posts from "../shared/Posts";
 import Dashboard from "../layouts/Dashboard";
 import MyProfile from "../shared/MyProfile";
-import Membership from "../shared/Membership";
-import ManageUsers from "../shared/ManageUsers";
-import MakeAnnouncement from "../shared/MakeAnnouncement";
-import Announcements from "../shared/Announcements";
-import AdminProfile from "../shared/AdminProfile";
+import AboutUs from "../shared/AboutUs";
+import Contact from "../shared/Contact";
 
 const router = createBrowserRouter([
     {
@@ -29,87 +20,52 @@ const router = createBrowserRouter([
             path: "/",
             element: <Home></Home>,
         },
-        {
-            path: "/addPost",
-            element: <AddPost></AddPost>
-        },
-        {
-            path: "/postDetails/:id",
-            element: <PostDetails></PostDetails>,
-            loader: ({params}) => fetch(`https://assignment-12-server-murex-sigma.vercel.app/posts/${params.id}`)
-        },
-        {
-            path: "/posts/:tag",
-            element: <Posts></Posts>,
-            loader: ({params}) => fetch(`https://assignment-12-server-murex-sigma.vercel.app/postss/${params.tag}`)
-        },
-        {
-            path: "/myPosts",
-            element: <MyPosts></MyPosts>,
-            loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/posts'),
-        },
-        {
-            path: "/comments/:title",
-            element:<Comments></Comments>,
-            loader: ({params}) => fetch(`https://assignment-12-server-murex-sigma.vercel.app/comments/${params.title}`)
-        },
-        {
-            path: "/announcements",
-            element: <Announcements></Announcements>,
-        },
-        {
-            path: "/postComments/:id",
-            element: <PrivateRoutes><PostComments></PostComments></PrivateRoutes> ,
-            loader: ({params}) => fetch(`https://assignment-12-server-murex-sigma.vercel.app/posts/${params.id}`)
-        },
+        
         {
             path: "/login",
             element: <LogIn></LogIn>
             
         },
         {
-            path: "/register",
-            element: <Register></Register>
+            path: "/aboutus",
+            element: <AboutUs></AboutUs>
+            
         },
         {
-            path: "/membership",
-            element: <PrivateRoutes><Membership></Membership></PrivateRoutes>,
+            path: "/contact",
+            element: <Contact></Contact>
+            
+        },
+        {
+            path: "/register",
+            element: <Register></Register>
         },
       ]
     },
     {
         path: 'dashboard',
         element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
-        loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/users'),
+        // loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/users'),
         children: [
             {
                 path:'myprofile',
-                element:<PrivateRoutes><MyProfile></MyProfile></PrivateRoutes> ,
-                loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/users'),
+                element:<PrivateRoutes><MyProfile></MyProfile></PrivateRoutes>,
+                // loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/users'),
             },
             {
-                path:'addPost',
-                element: <PrivateRoutes><AddPost></AddPost></PrivateRoutes>,
-                loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/posts'),
+                path:'todo',
+                element:<MyProfile></MyProfile>,
+                // loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/users'),
             },
             {
-                path:'myPost',
-                element: <PrivateRoutes><MyPosts></MyPosts></PrivateRoutes>,
-                loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/posts'),
+                path:'ongoing',
+                element:<MyProfile></MyProfile>,
+                // loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/users'),
             },
             {
-                path:'manageUsers',
-                element: <PrivateRoutes><ManageUsers></ManageUsers></PrivateRoutes>,
-                loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/users'),
-            },
-            {
-                path:'adminProfile',
-                element: <PrivateRoutes><AdminProfile></AdminProfile></PrivateRoutes>,
-                loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/users'),
-            },
-            {
-                path:'makeAnnouncement',
-                element: <PrivateRoutes><MakeAnnouncement></MakeAnnouncement></PrivateRoutes>,
+                path:'completed',
+                element:<MyProfile></MyProfile>,
+                // loader: () => fetch('https://assignment-12-server-murex-sigma.vercel.app/users'),
             },
         ]
     }

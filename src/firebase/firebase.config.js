@@ -43,12 +43,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDxffLp-d9EQk5ZxfkJJf6fzgIwa4Ano08",
-  authDomain: "forumfocus-4db9e.firebaseapp.com",
-  projectId: "forumfocus-4db9e",
-  storageBucket: "forumfocus-4db9e.appspot.com",
-  messagingSenderId: "911737884119",
-  appId: "1:911737884119:web:f17155e340a5df54600f92"
+  apiKey: "AIzaSyC9OxXCdYZpey9zr8Dw5OuxUnEB55UjqYQ",
+  authDomain: "taskmagnet-64d54.firebaseapp.com",
+  projectId: "taskmagnet-64d54",
+  storageBucket: "taskmagnet-64d54.appspot.com",
+  messagingSenderId: "782935789267",
+  appId: "1:782935789267:web:dd834e6792ff23db188e26"
 };
 
 // Initialize Firebase

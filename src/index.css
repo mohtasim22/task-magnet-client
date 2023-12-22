@@ -37,7 +37,13 @@ html,body
     visibility: visible;
   }
   .dropdown{
-
+  }
+  .task-tab{
+    width: 160px;
+    overflow: hidden;
+  }
+  .task-tabb{
+    border: 1.5px solid black;
   }
   .dropdown-content{
     color: black;
